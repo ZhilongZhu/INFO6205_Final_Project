@@ -8,6 +8,7 @@ package userinterface;
 import edu.neu.coe.info6205.simulation.Simulation;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,7 +29,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private String vaccineEffect = "0";
     private String initRatioOfSuper = "0.001";
     private String initRatioOfInfected = "0.01";
-    private String virusName;
+    private String virusName = "Virus";
     private int dayNums; // 暂时没用
     
     /**
@@ -55,7 +56,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jTextField13.setText(vaccinateRatio);
         jTextField14.setText(maskRatio);
         jTextField15.setText(testRatio);
-        jTextField16.setText(dayNums + "");
         
     }
 
@@ -106,11 +106,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jTextField15 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 800));
         setResizable(false);
 
         container.setPreferredSize(new java.awt.Dimension(1000, 800));
@@ -284,13 +281,9 @@ public class MainJFrame extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("PT Mono", 1, 13)); // NOI18N
         jButton2.setText("Virus INFO");
-
-        jLabel20.setText("Simulation days：");
-
-        jTextField16.setForeground(new java.awt.Color(0, 204, 51));
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -329,9 +322,7 @@ public class MainJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -401,7 +392,7 @@ public class MainJFrame extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelLayout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addGap(18, 18, 18)
@@ -423,11 +414,7 @@ public class MainJFrame extends javax.swing.JFrame {
                             .addGap(34, 34, 34)
                             .addComponent(jLabel18)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel20)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelLayout.createSequentialGroup()
                             .addGap(466, 466, 466)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -518,34 +505,93 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        this.virusName = jTextField1.getText();
-        this.sInfected = jTextField2.getText();
-        this.sSuper = jTextField3.getText();
-        this.superRatio = jTextField4.getText();
-        this.safeDistance = jTextField5.getText();
-        this.numberOfPeopleInit = jTextField6.getText();
-        this.initRatioOfInfected = jTextField7.getText();
-        this.initRatioOfSuper = jTextField8.getText();
-        this.peopleSingleMoveRange = jTextField9.getText();
-        this.coordinateRange = jTextField10.getText();
-        this.vaccineEffect = jTextField11.getText();
-        this.maskEffect = jTextField12.getText();
-        this.vaccinateRatio = jTextField13.getText();
-        this.maskRatio = jTextField14.getText();
-        this.testRatio = jTextField15.getText();
-        this.dayNums = Integer.parseInt(jTextField16.getText());
-        Simulation simulation = new Simulation();
-        simulation.initProcessorFromUser(peopleSingleMoveRange, vaccinateRatio, testRatio, maskRatio, safeDistance, sSuper, sInfected, superRatio, maskEffect, vaccineEffect, coordinateRange, numberOfPeopleInit, initRatioOfSuper, initRatioOfInfected);
-        CardLayout layout=(CardLayout)container.getLayout();
-        SimulationJPanel sjp = new SimulationJPanel(container, simulation, dayNums, Integer.parseInt(jTextField10.getText()), virusName, numberOfPeopleInit);
-        container.add("Simulation Panel",sjp);
-        layout.next(container);
+        boolean rightType = true;
+        try {
+            Double.parseDouble(jTextField2.getText());
+            Double.parseDouble(jTextField3.getText());
+            Double.parseDouble(jTextField4.getText());
+            Double.parseDouble(jTextField5.getText());
+            Double.parseDouble(jTextField6.getText());
+            Double.parseDouble(jTextField7.getText());
+            Double.parseDouble(jTextField8.getText());
+            Double.parseDouble(jTextField9.getText());
+            Double.parseDouble(jTextField10.getText());
+            Double.parseDouble(jTextField11.getText());
+            Double.parseDouble(jTextField12.getText());
+            Double.parseDouble(jTextField13.getText());
+            Double.parseDouble(jTextField14.getText());
+            Double.parseDouble(jTextField15.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Only numbers allowed (without Virus Name)");
+            rightType = false;
+        }
+        
+        rightType = rateValidation(Double.parseDouble(jTextField2.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField3.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField4.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField7.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField8.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField15.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField14.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField13.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField12.getText()));
+        if (rightType == false) return;
+        rightType = rateValidation(Double.parseDouble(jTextField11.getText()));
+        if (rightType == false) return;
+        if (Double.parseDouble(jTextField10.getText()) > 600) {
+            JOptionPane.showMessageDialog(this, "The move range is limited to 600");
+            rightType = false;
+        }
+        
+        if (rightType) {
+            this.virusName = jTextField1.getText();
+            this.sInfected = jTextField2.getText();
+            this.sSuper = jTextField3.getText();
+            this.superRatio = jTextField4.getText();
+            this.safeDistance = jTextField5.getText();
+            this.numberOfPeopleInit = jTextField6.getText();
+            this.initRatioOfInfected = jTextField7.getText();
+            this.initRatioOfSuper = jTextField8.getText();
+            this.peopleSingleMoveRange = jTextField9.getText();
+            this.coordinateRange = jTextField10.getText();
+            this.vaccineEffect = jTextField11.getText();
+            this.maskEffect = jTextField12.getText();
+            this.vaccinateRatio = jTextField13.getText();
+            this.maskRatio = jTextField14.getText();
+            this.testRatio = jTextField15.getText();
+            Simulation simulation = new Simulation();
+            simulation.initProcessorFromUser(peopleSingleMoveRange, vaccinateRatio, testRatio, maskRatio, safeDistance, sSuper, sInfected, superRatio, maskEffect, vaccineEffect, coordinateRange, numberOfPeopleInit, initRatioOfSuper, initRatioOfInfected);
+            CardLayout layout=(CardLayout)container.getLayout();
+            SimulationJPanel sjp = new SimulationJPanel(container, simulation, dayNums, Integer.parseInt(jTextField10.getText()), virusName, numberOfPeopleInit);
+            container.add("Simulation Panel",sjp);
+            layout.next(container);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+        CardLayout layout=(CardLayout)container.getLayout();
+        VirusInfoJPanel vip = new VirusInfoJPanel(container);
+        container.add("Virus Information Panel",vip);
+        layout.next(container);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
+    private boolean rateValidation(Double num) {
+        if (num > 1 || num < 0) {
+            JOptionPane.showMessageDialog(this, "The range of rate/ratio/effect is from 0 to 1");
+            return false;
+        }
+        return true;
+    }
     /**
      * @param args the command line arguments
      */
@@ -597,7 +643,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -613,7 +658,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
