@@ -57,7 +57,7 @@ public class Isolation {
         for (Iterator<People> it = this.peopleIsolatedHash.keySet().iterator();it.hasNext();) {
             People p = it.next();
             int i = this.peopleIsolatedHash.get(p);
-            if (i > 14) {
+            if (i >= 14) {
                 //p.getStates().remove(StateEnum.QUARANTINED);
 //                p.becomeNormal();
                 backToNormal.add(p);

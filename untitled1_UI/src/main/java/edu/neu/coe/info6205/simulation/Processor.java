@@ -303,38 +303,46 @@ public class Processor {
     private void superSpread(People p) {
 
         for (People targetP : this.nonIsolation.getPeopleNonIsoHash().keySet()) {
-            double distance = p.calcDistance(targetP);
-            if (distance < this.safeDistance) {
-                p.addContacts(targetP);
-                if (!this.todayContacted.contains(targetP)) {
-                    this.todayContacted.add(targetP);
-                }
+            if (p.equals(targetP)) {
+
+            } else {
+                double distance = p.calcDistance(targetP);
+                if (distance < this.safeDistance) {
+                    p.addContacts(targetP);
+                    if (!this.todayContacted.contains(targetP)) {
+                        this.todayContacted.add(targetP);
+                    }
 //                this.countTodayContacted += 1;
 
-                if (targetP.isNORMAL()) {
-                    this.infect(targetP, this.sSuper);
+                    if (targetP.isNORMAL()) {
+                        this.infect(targetP, this.sSuper);
+                    }
+
+
                 }
-
-
             }
         }
     }
 
     private void infectedSpread(People p) {
         for (People targetP : this.nonIsolation.getPeopleNonIsoHash().keySet()) {
-            double distance = p.calcDistance(targetP);
-            if (distance < this.safeDistance) {
-                p.addContacts(targetP);
-                if (!this.todayContacted.contains(targetP)) {
-                    this.todayContacted.add(targetP);
-                }
+            if (p.equals(targetP)) {
+
+            } else {
+                double distance = p.calcDistance(targetP);
+                if (distance < this.safeDistance) {
+                    p.addContacts(targetP);
+                    if (!this.todayContacted.contains(targetP)) {
+                        this.todayContacted.add(targetP);
+                    }
 //                this.countTodayContacted += 1;
 
-                if (targetP.isNORMAL()) {
-                    this.infect(targetP, this.sInfected);
+                    if (targetP.isNORMAL()) {
+                        this.infect(targetP, this.sInfected);
+                    }
+
+
                 }
-
-
             }
         }
     }

@@ -70,10 +70,8 @@ public class People {
      * remove all states of one person
      */
     public void removeAllState() {
-        for (StateEnum s : this.states) {
-
-            this.states.remove(s);
-
+        for(int i=0;i<this.states.size();i++){
+            this.states.remove(i);
         }
     }
 
@@ -156,7 +154,7 @@ public class People {
         int ythis = this.coordinates.getY();
         int xtarget = people.coordinates.getX();
         int ytarget = people.coordinates.getY();
-        d = Math.sqrt(Math.abs((xthis - xtarget) ^ 2 + (ythis - ytarget) ^ 2));
+        d = Math.sqrt(Math.abs(Math.pow((xthis - xtarget),2) + Math.pow((ythis - ytarget),2)));
         return d;
     }
 
