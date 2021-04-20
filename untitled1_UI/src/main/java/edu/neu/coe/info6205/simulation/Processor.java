@@ -199,8 +199,11 @@ public class Processor {
         for (People p : this.nonIsolation.getPeopleNonIsoHash().keySet()) {
             double r = this.random.nextDouble();
             if (r <= this.vaccinateRatio) {
-                p.addState(StateEnum.VACCINATED);
-                this.countTodayVaccinated += 1;
+                if(!p.isVACCINATED()){
+                    p.addState(StateEnum.VACCINATED);
+                    this.countTodayVaccinated += 1;
+
+                }
             }
 
         }
