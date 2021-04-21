@@ -149,10 +149,9 @@ class PeopleTest {
         Coordinates c = new Coordinates(0,0);
         People p1 = new People(c);
 
-        p1.getStates().clear();
         p1.addState(StateEnum.SUPER);
 
-        assertTrue(p1.isSUPER());
+        assertTrue(p1.isNORMAL());
     }
 
 
@@ -164,7 +163,7 @@ class PeopleTest {
 
         p1.addState(StateEnum.VACCINATED);
 
-        assertTrue(p1.isVACCINATED());
+        assertTrue(p1.isNORMAL());
     }
 
     @org.junit.jupiter.api.Test
@@ -174,7 +173,7 @@ class PeopleTest {
 
         p1.addState(StateEnum.MASK);
 
-        assertTrue(p1.isMASK());
+        assertTrue(p1.isNORMAL());
     }
 
     @org.junit.jupiter.api.Test
@@ -182,10 +181,8 @@ class PeopleTest {
         Coordinates c = new Coordinates(0,0);
         People p1 = new People(c);
 
-        p1.getStates().clear();
-
         p1.addState(StateEnum.INFECTED);
 
-        assertTrue(p1.isINFECTED());
+        assertTrue(p1.isNORMAL());
     }
 }
