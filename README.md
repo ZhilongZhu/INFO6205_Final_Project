@@ -15,5 +15,5 @@ We are Team_20 of INFO6205, Spring 2021, COE, Northeastern University.
 
 ![Run MainJFrame](https://github.com/XiaoQ162/TuChuang/blob/main/INFO6205/002.png)
 
-##### 5 we made a video of the operation process of this program
+##### 5 we made a video of the operation process of this program on the main page
 
